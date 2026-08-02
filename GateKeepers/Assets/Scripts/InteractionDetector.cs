@@ -14,11 +14,7 @@ public class InteractionDetector : MonoBehaviour
 
     public void OnInteract(InputAction.CallbackContext context)
     {
-        Debug.Log("OnInteract called, performed: " + context.performed);
-        if (context.performed)
-        {
-            interactableInRange?.Interact();
-        }
+        interactableInRange?.Interact();
     }
 
     private void OnTriggerEnter(Collider other)

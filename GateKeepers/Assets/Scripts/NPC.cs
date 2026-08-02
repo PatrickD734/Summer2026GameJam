@@ -8,6 +8,7 @@ public class NPC : MonoBehaviour, IInteractable
     public NPC_Dialogue dialogueData;
     public GameObject textPanel;
     public TMP_Text dialogueText, nameText;
+    //public string npcName;
     //public Image portraitImage;
 
     private int dialogueIndex;
@@ -54,11 +55,12 @@ public class NPC : MonoBehaviour, IInteractable
         isDialogueActive = true;
         dialogueIndex = 0;
 
-        nameText.SetText(dialogueData.name);
+        nameText.SetText(dialogueData.npcName);
         //portraitImage = dialogueData.npcPortrait
         //Replace with 2D equiveleant
         //PauseController.SetPause(true);
         textPanel.SetActive(true);
+        StartCoroutine(TypeLine());
     }
 
     IEnumerator TypeLine()
@@ -70,7 +72,6 @@ public class NPC : MonoBehaviour, IInteractable
         {
             dialogueText.text += letter;
             yield return new WaitForSeconds(dialogueData.typingSpeed);
-            NextLine();
         }
         isTyping = false;
     }
