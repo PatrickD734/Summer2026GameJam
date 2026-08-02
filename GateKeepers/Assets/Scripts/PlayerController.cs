@@ -38,6 +38,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (PauseControl.IsGamePaused)
+        {
+            return;
+        }
         // Get input
         Vector2 input = Vector2.zero;
         if (moveAction != null)

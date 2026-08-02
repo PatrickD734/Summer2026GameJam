@@ -54,11 +54,10 @@ public class NPC : MonoBehaviour, IInteractable
     {
         isDialogueActive = true;
         dialogueIndex = 0;
-
         nameText.SetText(dialogueData.npcName);
         //portraitImage = dialogueData.npcPortrait
         //Replace with 2D equiveleant
-        //PauseController.SetPause(true);
+        PauseControl.SetPause(true);
         textPanel.SetActive(true);
         StartCoroutine(TypeLine());
     }
@@ -82,6 +81,6 @@ public class NPC : MonoBehaviour, IInteractable
         isDialogueActive = false;
         dialogueText.SetText("");
         textPanel.SetActive(false);
-        //PauseController.SetPause(false);
+        PauseControl.SetPause(false);
     }
 }
