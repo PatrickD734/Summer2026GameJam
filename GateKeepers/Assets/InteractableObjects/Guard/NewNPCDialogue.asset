@@ -15,4 +15,5 @@ MonoBehaviour:
   npcName: Guard
   dialogueLines:
   - '"Who goes there?"'
+  - '"No one is allowed inside!"'
   typingSpeed: 0.05
